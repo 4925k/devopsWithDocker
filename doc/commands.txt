@@ -1,0 +1,51 @@
+# hello world
+$ docker container run hello-world
+#### IMAGE  ###
+
+# list images
+$ docker image ls 
+
+# pull image
+$ docker image pull <image>
+
+# remove image
+$ docker image rm <image>
+
+# prune images
+$ docker image prune
+
+
+### CONTAINER ###
+
+# remove container
+$ docker container rm <container> <container1> <container2>
+
+# remove container by force
+$ docker container rm --force <container>
+
+# prune  container
+$ docker container prune
+
+# list containers
+$ docker ps
+$ docker container ls
+
+# list running containers
+$ docker container ls -a
+
+# run a container from image
+$ docker container run <image>
+
+# run a container in the background (detached)
+$ docker container run -d <image> 
+
+# stop a running container
+$ docker container stop <container>
+
+# execute a command inside the container
+$ docker container exec <container>
+
+### SYSTEM ###`
+
+# prune docker system
+$ docker system prune
