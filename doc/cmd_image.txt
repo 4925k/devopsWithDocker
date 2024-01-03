@@ -1,0 +1,17 @@
+#### IMAGE  ###
+
+# list images
+$ docker image ls 
+
+# pull image
+$ docker image pull <image>
+
+# remove image
+$ docker image rm <image>
+
+# prune images
+$ docker image prune
+
+
+
+

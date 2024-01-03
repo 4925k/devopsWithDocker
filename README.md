@@ -1,7 +1,8 @@
 # devopsWithDocker
-Learning Docker
+Learning Docker from "https://devopswithdocker.com/"
 
-Learning objectives
+#### Learning objectives
+
 Part 1: DevOps with Docker
 
 Understand the fundamental concepts of Docker, including images and containers.

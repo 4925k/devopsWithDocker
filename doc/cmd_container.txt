@@ -1,21 +1,7 @@
+### CONTAINER ###
+
 # hello world
 $ docker container run hello-world
-#### IMAGE  ###
-
-# list images
-$ docker image ls 
-
-# pull image
-$ docker image pull <image>
-
-# remove image
-$ docker image rm <image>
-
-# prune images
-$ docker image prune
-
-
-### CONTAINER ###
 
 # remove container
 $ docker container rm <container> <container1> <container2>
@@ -45,7 +31,23 @@ $ docker container stop <container>
 # execute a command inside the container
 $ docker container exec <container>
 
-### SYSTEM ###`
+# docker run container and attach to it, i passes the stdin to the container and t makes it interactive
+$ docker run -it ubuntu
 
-# prune docker system
-$ docker system prune
+# pause container
+$ docker pause <container>
+
+# unpause container
+$ docker unpause <container>
+
+# attach to a detached container
+$ docker attach <container>
+
+# attach to a detached container without attaching stdin (no input)
+$ docker attach --no-stdin <container>
+
+# execute a new process in a container 
+$ docker exec -it <container> <command>
+
+# running a command inside container while starting
+$ docker run -d --rm -it --name <name> <image> <command>
