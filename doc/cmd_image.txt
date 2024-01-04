@@ -12,6 +12,10 @@ $ docker image rm <image>
 # prune images
 $ docker image prune
 
+# pull image with given tag
+$ docker pull <image>:<tag>
 
+# tag image locally 
+$ docker tag <image>:<tag> <new_image>:<new_tag>
 
 

@@ -1,0 +1,2 @@
+# build an image from Dockerfile
+$ docker build <output> -t <path_to_dockerfile>
