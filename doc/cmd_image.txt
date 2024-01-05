@@ -18,4 +18,5 @@ $ docker pull <image>:<tag>
 # tag image locally 
 $ docker tag <image>:<tag> <new_image>:<new_tag>
 
-
+# save changes done to a container as an image
+$ docker commit <container_name> <new_image_name>
