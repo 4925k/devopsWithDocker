@@ -15,4 +15,4 @@ COPY ./curler.sh .
 RUN chmod +x curler.sh
 
 # run the script when container starts
-CMD ./curler.sh
+ENTRYPOINT [ "./curler.sh" ]
