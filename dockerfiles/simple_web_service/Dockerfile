@@ -2,4 +2,4 @@
 FROM devopsdockeruh/simple-web-service
 
 # run the web service
-CMD ./usr/src/app/server
+CMD ["./usr/src/app/server", "server"]

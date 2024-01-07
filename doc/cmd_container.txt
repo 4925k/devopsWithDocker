@@ -51,3 +51,6 @@ $ docker exec -it <container> <command>
 
 # running a command inside container while starting
 $ docker run -d --rm -it --name <name> <image> <command>
+
+# mount a storage
+$ docker run -v "<outside_path>:<container_path>" <image>
