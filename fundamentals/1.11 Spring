@@ -1,0 +1,42 @@
+EXERCISE 1.11: SPRING
+Create a Dockerfile for an old Java Spring project that can be found from the course repository.
+
+The setup should be straightforward with the README instructions. Tips to get you started:
+
+Use openjdk image FROM openjdk:_tag_ to get Java instead of installing it manually. Pick the tag by using the README and Docker Hub page.
+
+You've completed the exercise when you see a 'Success' message in your browser.
+
+Submit the Dockerfile you used to run the container.
+
+
+################################
+
+# build docker image
+$ docker build . -t spring-project
+
+# run the container
+$ docker run -p 8080:8080 spring-project
+
+################################
+
+# image with java 8 installed
+FROM amazoncorretto:8
+
+# set work dir
+WORKDIR /usr/src/app
+
+# copy source code
+COPY . .
+
+# add executable permission
+RUN chmod +x mvnw
+
+# build the project
+RUN ./mvnw package
+
+# expose port 8080
+EXPOSE 8080
+
+# run the app
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
