@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ../../dockerfiles/example-backend
+    ports:
+      - 8080:8080
+  frontend:
+    build: ../../dockerfiles/example-frontend
+    ports:
+      - 5001:5001

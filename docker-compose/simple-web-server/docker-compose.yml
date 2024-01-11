@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  simple-web-service:
+    image: devopsdockeruh/simple-web-service
+    volumes:
+      - ./text.log:/usr/src/app/text.log
+    container_name: simple-web-service
+
+    # the following will start the server in the container
+    # if you want the logs to be printed instead, comment this.
+    command: ["./usr/src/app/server", "server"] 

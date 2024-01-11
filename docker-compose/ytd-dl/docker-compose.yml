@@ -1,0 +1,7 @@
+services:
+  ytd-dl:
+    image: 4925k/ytd-dl
+    build: .
+    volumes:
+    - .:/mydir
+    container_name: ytd-dl
