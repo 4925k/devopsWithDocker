@@ -5,8 +5,14 @@ services:
     build: ../../dockerfiles/example-backend
     ports:
       - 8080:8080
+    environment:
+      - REDIS_HOST=redis
   frontend:
     build: ../../dockerfiles/example-frontend
     ports:
       - 5001:5001
+  redis:
+    image: redis:7.2.4
+    ports:
+      - 6379:6379
       
