@@ -9,3 +9,4 @@ services:
     build: ../../dockerfiles/example-frontend
     ports:
       - 5001:5001
+      
