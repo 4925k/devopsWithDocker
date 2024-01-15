@@ -16,10 +16,12 @@ services:
     build: ../../dockerfiles/example-frontend
     ports:
       - 5001:5001
+  
   redis:
     image: redis:7.2.4
     ports:
       - 6379:6379
+  
   db:
     image: postgres:16-alpine
     restart: always
@@ -29,3 +31,13 @@ services:
       - type: bind
         source: ./static
         target: /var/lib/postgresql/data
+  
+  proxy:
+    image: nginx:alpine3.18
+    ports: 
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
