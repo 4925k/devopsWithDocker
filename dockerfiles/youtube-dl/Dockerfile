@@ -6,17 +6,15 @@ FROM ubuntu:20.04
 WORKDIR /usr/videos
 
 # install curl and python3
-RUN apt update
-RUN apt install -y python3 
-RUN apt install -y curl
-
-# install youtube downloader
-RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-RUN chmod a+rx /usr/local/bin/yt-dlp 
-
-# create new user and give ownership of workdir
-RUN useradd -m appuser
-RUN chown appuser .
+RUN apt update && \
+    apt install -y python3 && \
+    apt install -y curl && \
+    curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
+    chmod a+rx /usr/local/bin/yt-dlp && \
+    useradd -m appuser && \
+    chown appuser . && \
+    apt-get purge -y --auto-remove curl && \
+    rm -rf /var/lib/apt/lists/* 
 
 USER appuser
 
