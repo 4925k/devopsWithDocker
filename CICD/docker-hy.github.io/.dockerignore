@@ -1,6 +1,0 @@
-.docusaurus
-.dockerignore
-Dockerfile
-node_modules
-.github
-build
